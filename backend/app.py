@@ -5,7 +5,7 @@ import openai
 app = Flask(__name__, static_folder='../frontend/build')
 CORS(app)
 
-openai.api_key = "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"
+openai.api_key = "my_api_key"
 
 def generate_text(prompt):
     response = openai.Completion.create(
