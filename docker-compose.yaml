@@ -1,0 +1,45 @@
+services:
+  flask:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    container_name: flask
+    volumes:
+      - ./backend:/app
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      OPENAI_API_KEY: "my-key"
+    networks:
+      - my-network
+
+  react:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: react
+    volumes:
+      - ./frontend:/usr/src
+      - /usr/src/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - flask
+      - react
+    networks:
+      - my-network
+
+networks:
+  my-network:
