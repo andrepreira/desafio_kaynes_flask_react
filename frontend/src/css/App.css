@@ -1,0 +1,80 @@
+/* Center the content horizontally and vertically */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Style the input and output elements */
+#button-submit {
+  display: none;
+}
+input[type="text"] {
+  margin-top: 5vw;
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  margin-right: 8px;
+  width: 300px;
+  font-size: 18px;
+}
+
+button {
+  background-color: #0077ff;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.output {
+  margin-top: 24px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px  #282c34;
+  font-size: 12px;
+  line-height: 1.5;
+  color: white;
+}
+
+h1, h2 {
+  padding-top: 10px;
+  color: white;
+  width: 100%;
+}
+
+div.div-load {
+  color: red;
+}
+
+.input-red {
+  border: 1px solid red;
+  color: red;
+}
+
+.input-black {
+  border: 1px solid black;
+  color: black;
+}
+
+
+/* Make the page responsive */
+/* @media (min-width: 520px) and (max-width: 768px ) {
+  input[type="text"] {
+    margin-top: 270px;
+  }
+}
+@media (min-width: 376px) and (max-width: 520px ) {
+  input[type="text"] {
+    margin-top: 550px;
+  }
+}
+@media (min-width: 300px) and (max-width: 376px ) {
+  input[type="text"] {
+    margin-top: 750px;
+  }
+} */
